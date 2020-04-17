@@ -13,10 +13,10 @@ namespace FinancePlan.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FinancePlanEntities : DbContext
+    public partial class FinanceEntities : DbContext
     {
-        public FinancePlanEntities()
-            : base("name=FinancePlanEntities")
+        public FinanceEntities()
+            : base("name=FinanceEntities")
         {
         }
     
@@ -31,7 +31,7 @@ namespace FinancePlan.Models
         public virtual DbSet<tbCredits> tbCredits { get; set; }
         public virtual DbSet<tbCurrency> tbCurrency { get; set; }
         public virtual DbSet<tbMethod> tbMethod { get; set; }
-        public virtual DbSet<tbProfit> tbProfit { get; set; }
+        public virtual DbSet<tbProfits> tbProfits { get; set; }
         public virtual DbSet<tbServices> tbServices { get; set; }
     }
 }

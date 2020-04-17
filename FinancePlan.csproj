@@ -128,49 +128,56 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CapitalsController.cs" />
+    <Compile Include="Controllers\CreditsController.cs" />
+    <Compile Include="Controllers\CurrenciesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MethodsController.cs" />
     <Compile Include="Controllers\ProfitsController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\SpendingsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\FinanceModel.Context.cs">
+    <Compile Include="Models\FinanceData.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FinanceModel.Context.tt</DependentUpon>
+      <DependentUpon>FinanceData.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FinanceModel.cs">
+    <Compile Include="Models\FinanceData.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FinanceModel.tt</DependentUpon>
+      <DependentUpon>FinanceData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FinanceModel.Designer.cs">
+    <Compile Include="Models\FinanceData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FinanceModel.edmx</DependentUpon>
+      <DependentUpon>FinanceData.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\tbCapitals.cs">
-      <DependentUpon>FinanceModel.tt</DependentUpon>
+      <DependentUpon>FinanceData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbCredits.cs">
-      <DependentUpon>FinanceModel.tt</DependentUpon>
+      <DependentUpon>FinanceData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbCurrency.cs">
-      <DependentUpon>FinanceModel.tt</DependentUpon>
+      <DependentUpon>FinanceData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbMethod.cs">
-      <DependentUpon>FinanceModel.tt</DependentUpon>
+      <DependentUpon>FinanceData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tbProfit.cs">
-      <DependentUpon>FinanceModel.tt</DependentUpon>
+    <Compile Include="Models\tbProfits.cs">
+      <DependentUpon>FinanceData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbServices.cs">
-      <DependentUpon>FinanceModel.tt</DependentUpon>
+      <DependentUpon>FinanceData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbSpending.cs">
-      <DependentUpon>FinanceModel.tt</DependentUpon>
+      <DependentUpon>FinanceData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tbUsers.cs">
-      <DependentUpon>FinanceModel.tt</DependentUpon>
+      <DependentUpon>FinanceData.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -183,24 +190,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\FinanceModel.Context.tt">
+    <Content Include="Models\FinanceData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>FinanceModel.Context.cs</LastGenOutput>
-      <DependentUpon>FinanceModel.edmx</DependentUpon>
+      <DependentUpon>FinanceData.edmx</DependentUpon>
+      <LastGenOutput>FinanceData.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\FinanceModel.tt">
+    <Content Include="Models\FinanceData.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FinanceModel.edmx</DependentUpon>
-      <LastGenOutput>FinanceModel.cs</LastGenOutput>
+      <DependentUpon>FinanceData.edmx</DependentUpon>
+      <LastGenOutput>FinanceData.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\FinanceModel.edmx">
+    <EntityDeploy Include="Models\FinanceData.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FinanceModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>FinanceData.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\FinanceModel.edmx.diagram">
-      <DependentUpon>FinanceModel.edmx</DependentUpon>
+    <Content Include="Models\FinanceData.edmx.diagram">
+      <DependentUpon>FinanceData.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -232,6 +239,41 @@
     <Content Include="Views\Profits\Details.cshtml" />
     <Content Include="Views\Profits\Edit.cshtml" />
     <Content Include="Views\Profits\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Spendings\Create.cshtml" />
+    <Content Include="Views\Spendings\Delete.cshtml" />
+    <Content Include="Views\Spendings\Details.cshtml" />
+    <Content Include="Views\Spendings\Edit.cshtml" />
+    <Content Include="Views\Spendings\Index.cshtml" />
+    <Content Include="Views\Services\Create.cshtml" />
+    <Content Include="Views\Services\Delete.cshtml" />
+    <Content Include="Views\Services\Details.cshtml" />
+    <Content Include="Views\Services\Edit.cshtml" />
+    <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\Methods\Create.cshtml" />
+    <Content Include="Views\Methods\Delete.cshtml" />
+    <Content Include="Views\Methods\Details.cshtml" />
+    <Content Include="Views\Methods\Edit.cshtml" />
+    <Content Include="Views\Methods\Index.cshtml" />
+    <Content Include="Views\Currencies\Create.cshtml" />
+    <Content Include="Views\Currencies\Delete.cshtml" />
+    <Content Include="Views\Currencies\Details.cshtml" />
+    <Content Include="Views\Currencies\Edit.cshtml" />
+    <Content Include="Views\Currencies\Index.cshtml" />
+    <Content Include="Views\Credits\Create.cshtml" />
+    <Content Include="Views\Credits\Delete.cshtml" />
+    <Content Include="Views\Credits\Details.cshtml" />
+    <Content Include="Views\Credits\Edit.cshtml" />
+    <Content Include="Views\Credits\Index.cshtml" />
+    <Content Include="Views\Capitals\Create.cshtml" />
+    <Content Include="Views\Capitals\Delete.cshtml" />
+    <Content Include="Views\Capitals\Details.cshtml" />
+    <Content Include="Views\Capitals\Edit.cshtml" />
+    <Content Include="Views\Capitals\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

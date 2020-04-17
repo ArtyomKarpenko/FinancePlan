@@ -11,13 +11,18 @@ namespace FinancePlan.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class tbProfit
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class tbProfits
     {
         public int ProfitId { get; set; }
         public int UserId { get; set; }
         public int MethodId { get; set; }
         public decimal Amount { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd'/'MM'/'yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Дата рождения")]
         public System.DateTime Date { get; set; }
         public int CurrencyId { get; set; }
     

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FinancePlan.Models.tbProfits>
+﻿@model IEnumerable<FinancePlan.Models.tbCredits>
 
 @{
     ViewBag.Title = "Index";
@@ -13,6 +13,18 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.FullAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateBegin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateEnd)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.tbUsers.FirstName)
         </th>
         <th></th>
@@ -20,6 +32,18 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateBegin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateEnd)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.tbUsers.FirstName)
         </td>

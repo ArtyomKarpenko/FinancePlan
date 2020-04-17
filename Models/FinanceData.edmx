@@ -75,8 +75,8 @@ warning 6002: The table/view 'FinancePlan.dbo.tbMethod' does not have a primary 
           <Property Name="IsClosed" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FinancePlan.dbo.tbProfit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="tbProfit">
+warning 6002: The table/view 'FinancePlan.dbo.tbProfits' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbProfits">
           <Key>
             <PropertyRef Name="ProfitId" />
             <PropertyRef Name="UserId" />
@@ -179,12 +179,12 @@ warning 6035: The relationship 'FK_tbProfit_tbMethod' has columns that are not p
         <Association Name="FK_tbProfit_tbMethod" />-->
         <Association Name="FK_tbProfit_tbUsers">
           <End Role="tbUsers" Type="Self.tbUsers" Multiplicity="1" />
-          <End Role="tbProfit" Type="Self.tbProfit" Multiplicity="*" />
+          <End Role="tbProfits" Type="Self.tbProfits" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tbUsers">
               <PropertyRef Name="UserId" />
             </Principal>
-            <Dependent Role="tbProfit">
+            <Dependent Role="tbProfits">
               <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
@@ -265,15 +265,15 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
     [tbMethod].[IsClosed] AS [IsClosed]
     FROM [dbo].[tbMethod] AS [tbMethod]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="tbProfit" EntityType="Self.tbProfit" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="tbProfits" EntityType="Self.tbProfits" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [tbProfit].[ProfitId] AS [ProfitId], 
-    [tbProfit].[UserId] AS [UserId], 
-    [tbProfit].[MethodId] AS [MethodId], 
-    [tbProfit].[Amount] AS [Amount], 
-    [tbProfit].[Date] AS [Date], 
-    [tbProfit].[CurrencyId] AS [CurrencyId]
-    FROM [dbo].[tbProfit] AS [tbProfit]</DefiningQuery>
+    [tbProfits].[ProfitId] AS [ProfitId], 
+    [tbProfits].[UserId] AS [UserId], 
+    [tbProfits].[MethodId] AS [MethodId], 
+    [tbProfits].[Amount] AS [Amount], 
+    [tbProfits].[Date] AS [Date], 
+    [tbProfits].[CurrencyId] AS [CurrencyId]
+    FROM [dbo].[tbProfits] AS [tbProfits]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="tbServices" EntityType="Self.tbServices" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -300,7 +300,7 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
           </AssociationSet>
           <AssociationSet Name="FK_tbProfit_tbUsers" Association="Self.FK_tbProfit_tbUsers">
             <End Role="tbUsers" EntitySet="tbUsers" />
-            <End Role="tbProfit" EntitySet="tbProfit" />
+            <End Role="tbProfits" EntitySet="tbProfits" />
           </AssociationSet>
           <AssociationSet Name="FK_tbServices_tbUsers" Association="Self.FK_tbServices_tbUsers">
             <End Role="tbUsers" EntitySet="tbUsers" />
@@ -340,7 +340,7 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
           <NavigationProperty Name="tbCapitals" Relationship="Self.FK_tbCapitals_tbUsers" FromRole="tbUsers" ToRole="tbCapitals" />
           <NavigationProperty Name="tbCredits" Relationship="Self.FK_tbCredits_tbUsers" FromRole="tbUsers" ToRole="tbCredits" />
           <NavigationProperty Name="tbMethod" Relationship="Self.FK_tbMethod_tbUsers" FromRole="tbUsers" ToRole="tbMethod" />
-          <NavigationProperty Name="tbProfit" Relationship="Self.FK_tbProfit_tbUsers" FromRole="tbUsers" ToRole="tbProfit" />
+          <NavigationProperty Name="tbProfits" Relationship="Self.FK_tbProfit_tbUsers" FromRole="tbUsers" ToRole="tbProfits" />
           <NavigationProperty Name="tbServices" Relationship="Self.FK_tbServices_tbUsers" FromRole="tbUsers" ToRole="tbServices" />
         </EntityType>
         <EntityType Name="tbCapitals">
@@ -407,7 +407,7 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
           <Property Name="IsClosed" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tbUsers" Relationship="Self.FK_tbMethod_tbUsers" FromRole="tbMethod" ToRole="tbUsers" />
         </EntityType>
-        <EntityType Name="tbProfit">
+        <EntityType Name="tbProfits">
           <Key>
             <PropertyRef Name="ProfitId" />
             <PropertyRef Name="UserId" />
@@ -422,7 +422,7 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
           <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="CurrencyId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tbUsers" Relationship="Self.FK_tbProfit_tbUsers" FromRole="tbProfit" ToRole="tbUsers" />
+          <NavigationProperty Name="tbUsers" Relationship="Self.FK_tbProfit_tbUsers" FromRole="tbProfits" ToRole="tbUsers" />
         </EntityType>
         <EntityType Name="tbServices">
           <Key>
@@ -493,12 +493,12 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
         </Association>
         <Association Name="FK_tbProfit_tbUsers">
           <End Role="tbUsers" Type="Self.tbUsers" Multiplicity="1" />
-          <End Role="tbProfit" Type="Self.tbProfit" Multiplicity="*" />
+          <End Role="tbProfits" Type="Self.tbProfits" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tbUsers">
               <PropertyRef Name="UserId" />
             </Principal>
-            <Dependent Role="tbProfit">
+            <Dependent Role="tbProfits">
               <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
@@ -515,14 +515,14 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="FinancePlanEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="FinanceEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tbSpending" EntityType="Self.tbSpending" />
           <EntitySet Name="tbUsers" EntityType="Self.tbUsers" />
           <EntitySet Name="tbCapitals" EntityType="Self.tbCapitals" />
           <EntitySet Name="tbCredits" EntityType="Self.tbCredits" />
           <EntitySet Name="tbCurrency" EntityType="Self.tbCurrency" />
           <EntitySet Name="tbMethod" EntityType="Self.tbMethod" />
-          <EntitySet Name="tbProfit" EntityType="Self.tbProfit" />
+          <EntitySet Name="tbProfits" EntityType="Self.tbProfits" />
           <EntitySet Name="tbServices" EntityType="Self.tbServices" />
           <AssociationSet Name="FK_tbSpending_tbUsers" Association="Self.FK_tbSpending_tbUsers">
             <End Role="tbUsers" EntitySet="tbUsers" />
@@ -542,7 +542,7 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
           </AssociationSet>
           <AssociationSet Name="FK_tbProfit_tbUsers" Association="Self.FK_tbProfit_tbUsers">
             <End Role="tbUsers" EntitySet="tbUsers" />
-            <End Role="tbProfit" EntitySet="tbProfit" />
+            <End Role="tbProfits" EntitySet="tbProfits" />
           </AssociationSet>
           <AssociationSet Name="FK_tbServices_tbUsers" Association="Self.FK_tbServices_tbUsers">
             <End Role="tbUsers" EntitySet="tbUsers" />
@@ -554,7 +554,7 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FinancePlanModelStoreContainer" CdmEntityContainer="FinancePlanEntities">
+        <EntityContainerMapping StorageEntityContainer="FinancePlanModelStoreContainer" CdmEntityContainer="FinanceEntities">
           <EntitySetMapping Name="tbSpending">
             <EntityTypeMapping TypeName="FinancePlanModel.tbSpending">
               <MappingFragment StoreEntitySet="tbSpending">
@@ -628,9 +628,9 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tbProfit">
-            <EntityTypeMapping TypeName="FinancePlanModel.tbProfit">
-              <MappingFragment StoreEntitySet="tbProfit">
+          <EntitySetMapping Name="tbProfits">
+            <EntityTypeMapping TypeName="FinancePlanModel.tbProfits">
+              <MappingFragment StoreEntitySet="tbProfits">
                 <ScalarProperty Name="ProfitId" ColumnName="ProfitId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="MethodId" ColumnName="MethodId" />

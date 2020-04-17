@@ -1,4 +1,4 @@
-﻿@model FinancePlan.Models.tbProfits
+﻿@model FinancePlan.Models.tbMethod
 
 @{
     ViewBag.Title = "Edit";
@@ -13,20 +13,18 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>tbProfits</h4>
+        <h4>tbMethod</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.ProfitId)
+        @Html.HiddenFor(model => model.MethodId)
 
         @Html.HiddenFor(model => model.UserId)
 
-        @Html.HiddenFor(model => model.MethodId)
+        @Html.HiddenFor(model => model.Name)
 
-        @Html.HiddenFor(model => model.Amount)
+        @Html.HiddenFor(model => model.Type)
 
-        @Html.HiddenFor(model => model.Date)
-
-        @Html.HiddenFor(model => model.CurrencyId)
+        @Html.HiddenFor(model => model.IsClosed)
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

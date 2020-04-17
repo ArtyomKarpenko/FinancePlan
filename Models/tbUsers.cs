@@ -21,7 +21,7 @@ namespace FinancePlan.Models
             this.tbCapitals = new HashSet<tbCapitals>();
             this.tbCredits = new HashSet<tbCredits>();
             this.tbMethod = new HashSet<tbMethod>();
-            this.tbProfit = new HashSet<tbProfit>();
+            this.tbProfits = new HashSet<tbProfits>();
             this.tbServices = new HashSet<tbServices>();
         }
     
@@ -39,7 +39,7 @@ namespace FinancePlan.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbMethod> tbMethod { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbProfit> tbProfit { get; set; }
+        public virtual ICollection<tbProfits> tbProfits { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbServices> tbServices { get; set; }
     }

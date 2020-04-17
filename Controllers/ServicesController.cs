@@ -10,112 +10,112 @@ using FinancePlan.Models;
 
 namespace FinancePlan.Controllers
 {
-    public class ProfitsController : Controller
+    public class ServicesController : Controller
     {
         private FinanceEntities db = new FinanceEntities();
 
-        // GET: Profits
+        // GET: Services
         public ActionResult Index()
         {
-            var tbProfits = db.tbProfits.Include(t => t.tbUsers);
-            return View(tbProfits.ToList());
+            var tbServices = db.tbServices.Include(t => t.tbUsers);
+            return View(tbServices.ToList());
         }
 
-        // GET: Profits/Details/5
+        // GET: Services/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tbProfits tbProfits = db.tbProfits.Find(id);
-            if (tbProfits == null)
+            tbServices tbServices = db.tbServices.Find(id);
+            if (tbServices == null)
             {
                 return HttpNotFound();
             }
-            return View(tbProfits);
+            return View(tbServices);
         }
 
-        // GET: Profits/Create
+        // GET: Services/Create
         public ActionResult Create()
         {
             ViewBag.UserId = new SelectList(db.tbUsers, "UserId", "FirstName");
             return View();
         }
 
-        // POST: Profits/Create
+        // POST: Services/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProfitId,UserId,MethodId,Amount,Date,CurrencyId")] tbProfits tbProfits)
+        public ActionResult Create([Bind(Include = "ServiceId,UserId,MethodId,Amount,Date,IsClosed,CurrencyId")] tbServices tbServices)
         {
             if (ModelState.IsValid)
             {
-                db.tbProfits.Add(tbProfits);
+                db.tbServices.Add(tbServices);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.UserId = new SelectList(db.tbUsers, "UserId", "FirstName", tbProfits.UserId);
-            return View(tbProfits);
+            ViewBag.UserId = new SelectList(db.tbUsers, "UserId", "FirstName", tbServices.UserId);
+            return View(tbServices);
         }
 
-        // GET: Profits/Edit/5
+        // GET: Services/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tbProfits tbProfits = db.tbProfits.Find(id);
-            if (tbProfits == null)
+            tbServices tbServices = db.tbServices.Find(id);
+            if (tbServices == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.UserId = new SelectList(db.tbUsers, "UserId", "FirstName", tbProfits.UserId);
-            return View(tbProfits);
+            ViewBag.UserId = new SelectList(db.tbUsers, "UserId", "FirstName", tbServices.UserId);
+            return View(tbServices);
         }
 
-        // POST: Profits/Edit/5
+        // POST: Services/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProfitId,UserId,MethodId,Amount,Date,CurrencyId")] tbProfits tbProfits)
+        public ActionResult Edit([Bind(Include = "ServiceId,UserId,MethodId,Amount,Date,IsClosed,CurrencyId")] tbServices tbServices)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tbProfits).State = EntityState.Modified;
+                db.Entry(tbServices).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.UserId = new SelectList(db.tbUsers, "UserId", "FirstName", tbProfits.UserId);
-            return View(tbProfits);
+            ViewBag.UserId = new SelectList(db.tbUsers, "UserId", "FirstName", tbServices.UserId);
+            return View(tbServices);
         }
 
-        // GET: Profits/Delete/5
+        // GET: Services/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tbProfits tbProfits = db.tbProfits.Find(id);
-            if (tbProfits == null)
+            tbServices tbServices = db.tbServices.Find(id);
+            if (tbServices == null)
             {
                 return HttpNotFound();
             }
-            return View(tbProfits);
+            return View(tbServices);
         }
 
-        // POST: Profits/Delete/5
+        // POST: Services/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            tbProfits tbProfits = db.tbProfits.Find(id);
-            db.tbProfits.Remove(tbProfits);
+            tbServices tbServices = db.tbServices.Find(id);
+            db.tbServices.Remove(tbServices);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

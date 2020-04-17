@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="770ca0b01cab4624ac4111143cfed544" Name="Diagram1">
+      <Diagram DiagramId="6afeef78eb2b46a7bcd64525e409db9d" Name="Diagram1">
         <EntityTypeShape EntityType="FinancePlanModel.tbSpending" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FinancePlanModel.tbUsers" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="FinancePlanModel.tbCapitals" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="FinancePlanModel.tbCredits" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FinancePlanModel.tbCurrency" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FinancePlanModel.tbMethod" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FinancePlanModel.tbProfit" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancePlanModel.tbProfits" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FinancePlanModel.tbServices" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
         <AssociationConnector Association="FinancePlanModel.FK_tbSpending_tbUsers" ManuallyRouted="false" />
         <AssociationConnector Association="FinancePlanModel.FK_tbCapitals_tbUsers" ManuallyRouted="false" />
