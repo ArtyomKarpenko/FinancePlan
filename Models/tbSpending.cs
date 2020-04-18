@@ -20,7 +20,5 @@ namespace FinancePlan.Models
         public decimal Amount { get; set; }
         public System.DateTime Date { get; set; }
         public int CurrencyId { get; set; }
-    
-        public virtual tbUsers tbUsers { get; set; }
     }
 }

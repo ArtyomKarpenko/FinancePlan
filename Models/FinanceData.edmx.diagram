@@ -5,20 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="6afeef78eb2b46a7bcd64525e409db9d" Name="Diagram1">
-        <EntityTypeShape EntityType="FinancePlanModel.tbSpending" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FinancePlanModel.tbUsers" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FinancePlanModel.tbCapitals" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FinancePlanModel.tbCredits" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FinancePlanModel.tbCurrency" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FinancePlanModel.tbMethod" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FinancePlanModel.tbProfits" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FinancePlanModel.tbServices" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
-        <AssociationConnector Association="FinancePlanModel.FK_tbSpending_tbUsers" ManuallyRouted="false" />
-        <AssociationConnector Association="FinancePlanModel.FK_tbCapitals_tbUsers" ManuallyRouted="false" />
-        <AssociationConnector Association="FinancePlanModel.FK_tbCredits_tbUsers" ManuallyRouted="false" />
-        <AssociationConnector Association="FinancePlanModel.FK_tbMethod_tbUsers" ManuallyRouted="false" />
-        <AssociationConnector Association="FinancePlanModel.FK_tbProfit_tbUsers" ManuallyRouted="false" />
-        <AssociationConnector Association="FinancePlanModel.FK_tbServices_tbUsers" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FinancePlanModel.tbSpending" Width="1.5" PointX="6" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancePlanModel.tbUsers" Width="1.5" PointX="1" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancePlanModel.tbCapitals" Width="1.5" PointX="8.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancePlanModel.tbCredits" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancePlanModel.tbCurrency" Width="1.5" PointX="8.375" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancePlanModel.tbMethod" Width="1.5" PointX="9.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancePlanModel.tbProfits" Width="1.5" PointX="3.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinancePlanModel.tbServices" Width="1.5" PointX="3.5" PointY="3.875" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

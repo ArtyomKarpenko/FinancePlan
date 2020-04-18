@@ -326,7 +326,6 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
           <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="CurrencyId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tbUsers" Relationship="Self.FK_tbSpending_tbUsers" FromRole="tbSpending" ToRole="tbUsers" />
         </EntityType>
         <EntityType Name="tbUsers">
           <Key>
@@ -336,12 +335,6 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
           <Property Name="FirstName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="LastName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="RegistrationDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="tbSpending" Relationship="Self.FK_tbSpending_tbUsers" FromRole="tbUsers" ToRole="tbSpending" />
-          <NavigationProperty Name="tbCapitals" Relationship="Self.FK_tbCapitals_tbUsers" FromRole="tbUsers" ToRole="tbCapitals" />
-          <NavigationProperty Name="tbCredits" Relationship="Self.FK_tbCredits_tbUsers" FromRole="tbUsers" ToRole="tbCredits" />
-          <NavigationProperty Name="tbMethod" Relationship="Self.FK_tbMethod_tbUsers" FromRole="tbUsers" ToRole="tbMethod" />
-          <NavigationProperty Name="tbProfits" Relationship="Self.FK_tbProfit_tbUsers" FromRole="tbUsers" ToRole="tbProfits" />
-          <NavigationProperty Name="tbServices" Relationship="Self.FK_tbServices_tbUsers" FromRole="tbUsers" ToRole="tbServices" />
         </EntityType>
         <EntityType Name="tbCapitals">
           <Key>
@@ -361,7 +354,6 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
           <Property Name="Type" Type="Int32" />
           <Property Name="DateBegin" Type="DateTime" Precision="3" />
           <Property Name="DateEnd" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="tbUsers" Relationship="Self.FK_tbCapitals_tbUsers" FromRole="tbCapitals" ToRole="tbUsers" />
         </EntityType>
         <EntityType Name="tbCredits">
           <Key>
@@ -382,7 +374,6 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
           <Property Name="DateBegin" Type="DateTime" Precision="3" />
           <Property Name="DateEnd" Type="DateTime" Precision="3" />
           <Property Name="CurrencyId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tbUsers" Relationship="Self.FK_tbCredits_tbUsers" FromRole="tbCredits" ToRole="tbUsers" />
         </EntityType>
         <EntityType Name="tbCurrency">
           <Key>
@@ -405,7 +396,6 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Type" Type="Int32" Nullable="false" />
           <Property Name="IsClosed" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tbUsers" Relationship="Self.FK_tbMethod_tbUsers" FromRole="tbMethod" ToRole="tbUsers" />
         </EntityType>
         <EntityType Name="tbProfits">
           <Key>
@@ -422,7 +412,6 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
           <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="CurrencyId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tbUsers" Relationship="Self.FK_tbProfit_tbUsers" FromRole="tbProfits" ToRole="tbUsers" />
         </EntityType>
         <EntityType Name="tbServices">
           <Key>
@@ -441,80 +430,7 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="IsClosed" Type="Int32" Nullable="false" />
           <Property Name="CurrencyId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tbUsers" Relationship="Self.FK_tbServices_tbUsers" FromRole="tbServices" ToRole="tbUsers" />
         </EntityType>
-        <Association Name="FK_tbSpending_tbUsers">
-          <End Role="tbUsers" Type="Self.tbUsers" Multiplicity="1" />
-          <End Role="tbSpending" Type="Self.tbSpending" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tbUsers">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="tbSpending">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tbCapitals_tbUsers">
-          <End Role="tbUsers" Type="Self.tbUsers" Multiplicity="1" />
-          <End Role="tbCapitals" Type="Self.tbCapitals" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tbUsers">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="tbCapitals">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tbCredits_tbUsers">
-          <End Role="tbUsers" Type="Self.tbUsers" Multiplicity="1" />
-          <End Role="tbCredits" Type="Self.tbCredits" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tbUsers">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="tbCredits">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tbMethod_tbUsers">
-          <End Role="tbUsers" Type="Self.tbUsers" Multiplicity="1" />
-          <End Role="tbMethod" Type="Self.tbMethod" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tbUsers">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="tbMethod">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tbProfit_tbUsers">
-          <End Role="tbUsers" Type="Self.tbUsers" Multiplicity="1" />
-          <End Role="tbProfits" Type="Self.tbProfits" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tbUsers">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="tbProfits">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tbServices_tbUsers">
-          <End Role="tbUsers" Type="Self.tbUsers" Multiplicity="1" />
-          <End Role="tbServices" Type="Self.tbServices" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tbUsers">
-              <PropertyRef Name="UserId" />
-            </Principal>
-            <Dependent Role="tbServices">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="FinanceEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tbSpending" EntityType="Self.tbSpending" />
           <EntitySet Name="tbUsers" EntityType="Self.tbUsers" />
@@ -524,30 +440,6 @@ warning 6035: The relationship 'FK_tbSpending_tbMethod' has columns that are not
           <EntitySet Name="tbMethod" EntityType="Self.tbMethod" />
           <EntitySet Name="tbProfits" EntityType="Self.tbProfits" />
           <EntitySet Name="tbServices" EntityType="Self.tbServices" />
-          <AssociationSet Name="FK_tbSpending_tbUsers" Association="Self.FK_tbSpending_tbUsers">
-            <End Role="tbUsers" EntitySet="tbUsers" />
-            <End Role="tbSpending" EntitySet="tbSpending" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tbCapitals_tbUsers" Association="Self.FK_tbCapitals_tbUsers">
-            <End Role="tbUsers" EntitySet="tbUsers" />
-            <End Role="tbCapitals" EntitySet="tbCapitals" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tbCredits_tbUsers" Association="Self.FK_tbCredits_tbUsers">
-            <End Role="tbUsers" EntitySet="tbUsers" />
-            <End Role="tbCredits" EntitySet="tbCredits" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tbMethod_tbUsers" Association="Self.FK_tbMethod_tbUsers">
-            <End Role="tbUsers" EntitySet="tbUsers" />
-            <End Role="tbMethod" EntitySet="tbMethod" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tbProfit_tbUsers" Association="Self.FK_tbProfit_tbUsers">
-            <End Role="tbUsers" EntitySet="tbUsers" />
-            <End Role="tbProfits" EntitySet="tbProfits" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tbServices_tbUsers" Association="Self.FK_tbServices_tbUsers">
-            <End Role="tbUsers" EntitySet="tbUsers" />
-            <End Role="tbServices" EntitySet="tbServices" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>

@@ -19,7 +19,5 @@ namespace FinancePlan.Models
         public string Name { get; set; }
         public int Type { get; set; }
         public int IsClosed { get; set; }
-    
-        public virtual tbUsers tbUsers { get; set; }
     }
 }

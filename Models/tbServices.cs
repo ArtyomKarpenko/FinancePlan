@@ -21,7 +21,5 @@ namespace FinancePlan.Models
         public System.DateTime Date { get; set; }
         public int IsClosed { get; set; }
         public int CurrencyId { get; set; }
-    
-        public virtual tbUsers tbUsers { get; set; }
     }
 }

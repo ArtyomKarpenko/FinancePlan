@@ -12,16 +12,16 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.tbUsers.FirstName)
+            @Html.DisplayNameFor(model => model.tbUsers.MethodId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.tbUsers.FirstName)
+            @Html.DisplayFor(model => model.tbUsers.MethodId)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MethodId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -24,7 +24,5 @@ namespace FinancePlan.Models
         public Nullable<System.DateTime> DateBegin { get; set; }
         public Nullable<System.DateTime> DateEnd { get; set; }
         public int CurrencyId { get; set; }
-    
-        public virtual tbUsers tbUsers { get; set; }
     }
 }
